@@ -1,0 +1,29 @@
+service MiAPI {
+    route /usuarios {
+        GET {
+            return "Lista de usuarios";
+        }
+
+        POST {
+            let nombre = "Anahi";
+            let edad = 21;
+            if (edad != 18) {
+                return "Usuario válido";
+            } else {
+                return error;
+            }
+        }
+    }
+
+    route /auth {
+        POST {
+            let usuario = "admin";
+            let password = "1234";
+            if (usuario == "admin" && password == "1234") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+}
