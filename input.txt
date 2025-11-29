@@ -6,8 +6,8 @@ service MiAPI {
 
         POST {
             let nombre = "Anahi";
-            let edad = 21;
-            if (edad != 18) {
+            let  edad = 21;
+            if (edad == 18) {
                 return "Usuario válido";
             } else {
                 return error;
@@ -17,9 +17,16 @@ service MiAPI {
 
     route /auth {
         POST {
-            let usuario = "admin";
-            let password = "1234";
-            if (usuario == "admin" && password == "1234") {
+            let usuario = 1;
+            let password = false;
+            
+            if (usuario == true ) {
+            return true;
+            } else {
+                return false;
+            }
+            
+            if (password == true) {
                 return true;
             } else {
                 return false;

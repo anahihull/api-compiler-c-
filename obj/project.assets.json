@@ -8,24 +8,25 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/anahihull/.nuget/packages/": {}
+    "/Users/betsyarceo/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/anahihull/Desktop/Compilador/Compilador.csproj",
+      "projectUniqueName": "/Users/betsyarceo/api-compiler-c-/Compilador.csproj",
       "projectName": "Compilador",
-      "projectPath": "/home/anahihull/Desktop/Compilador/Compilador.csproj",
-      "packagesPath": "/home/anahihull/.nuget/packages/",
-      "outputPath": "/home/anahihull/Desktop/Compilador/obj/",
+      "projectPath": "/Users/betsyarceo/api-compiler-c-/Compilador.csproj",
+      "packagesPath": "/Users/betsyarceo/.nuget/packages/",
+      "outputPath": "/Users/betsyarceo/api-compiler-c-/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/anahihull/.nuget/NuGet/NuGet.Config"
+        "/Users/betsyarceo/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -43,7 +44,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -59,12 +61,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/anahihull/.dotnet/sdk/8.0.415/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

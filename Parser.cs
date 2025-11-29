@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Compilador;
 
 namespace Compilador
 {
@@ -42,7 +41,6 @@ namespace Compilador
             }
         }
 
-        // ======== PUNTO DE ENTRADA PRINCIPAL ========
         public void Parse()
         {
             while (Current.Type != Tools.TokenType.EOF)
@@ -52,7 +50,6 @@ namespace Compilador
             Console.WriteLine("✔ Análisis sintáctico completado sin errores.");
         }
 
-        // ======== SERVICIO ========
         private void ParseService()
         {
             Expect(Tools.TokenType.SERVICE, "Se esperaba 'service'");
@@ -67,17 +64,14 @@ namespace Compilador
             Expect(Tools.TokenType.RBRACE, "Se esperaba '}' al final del servicio");
         }
 
-        // ======== RUTA ========
         private void ParseRoute()
         {
-            // Aceptar rutas tipo /usuarios o "usuarios"
             if (Match(Tools.TokenType.STRING, Tools.TokenType.IDENTIFIER))
             {
                 // ok
             }
             else if (Match(Tools.TokenType.DIV))
             {
-                // Ahora aceptamos IDENTIFIER o cualquier palabra clave después de '/'
                 if (Match(Tools.TokenType.IDENTIFIER, Tools.TokenType.AUTH, Tools.TokenType.BODY,
                         Tools.TokenType.PARAMS, Tools.TokenType.QUERY, Tools.TokenType.STATUS,
                         Tools.TokenType.ERROR, Tools.TokenType.RETURN))
@@ -96,18 +90,23 @@ namespace Compilador
 
             Expect(Tools.TokenType.LBRACE, "Se esperaba '{' tras la ruta");
 
-            while (Match(Tools.TokenType.GET, Tools.TokenType.POST, Tools.TokenType.PUT, Tools.TokenType.PATCH, Tools.TokenType.DELETE))
+            // ✅ CORRECCIÓN: Verificar sin consumir
+            while (Current.Type == Tools.TokenType.GET || 
+                   Current.Type == Tools.TokenType.POST || 
+                   Current.Type == Tools.TokenType.PUT || 
+                   Current.Type == Tools.TokenType.PATCH || 
+                   Current.Type == Tools.TokenType.DELETE)
             {
+                Advance(); // Consume el método HTTP
                 ParseMethodBody();
             }
 
             Expect(Tools.TokenType.RBRACE, "Se esperaba '}' al final de la ruta");
         }
 
-
-        // ======== MÉTODO HTTP ========
         private void ParseMethodBody()
         {
+            // ✅ Ya no esperamos el método HTTP aquí, fue consumido antes
             Expect(Tools.TokenType.LBRACE, "Se esperaba '{' después del método HTTP");
 
             while (!Match(Tools.TokenType.RBRACE))
@@ -116,7 +115,6 @@ namespace Compilador
             }
         }
 
-        // ======== SENTENCIAS ========
         private void ParseStatement()
         {
             if (Match(Tools.TokenType.LET))
@@ -126,14 +124,12 @@ namespace Compilador
             }
             else if (Match(Tools.TokenType.RETURN))
             {
-                // Manejar "return error;"
                 if (Match(Tools.TokenType.ERROR))
                 {
                     Expect(Tools.TokenType.SEMICOLON, "Se esperaba ';' después de return error");
                     return;
                 }
 
-                // De lo contrario, retorno normal
                 ParseExpression();
                 Expect(Tools.TokenType.SEMICOLON, "Se esperaba ';' después de return");
             }
@@ -172,7 +168,6 @@ namespace Compilador
             }
         }
 
-        // ======== EXPRESIONES ========
         private void ParseExpression()
         {
             ParseTerm();
@@ -189,7 +184,6 @@ namespace Compilador
 
         private void ParseTerm()
         {
-            // Valores primitivos o identificadores
             if (Match(Tools.TokenType.IDENTIFIER, Tools.TokenType.INTEGER, Tools.TokenType.FLOAT,
                       Tools.TokenType.STRING, Tools.TokenType.TRUE, Tools.TokenType.FALSE,
                       Tools.TokenType.ERROR))
@@ -197,7 +191,6 @@ namespace Compilador
                 return;
             }
 
-            // Expresión entre paréntesis
             if (Match(Tools.TokenType.LPAREN))
             {
                 ParseExpression();

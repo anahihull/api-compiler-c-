@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string filePath = args.Length > 0 ? args[0] : "/home/anahihull/Desktop/Compilador/input.txt";
+        string filePath = args.Length > 0 ? args[0] : "/Users/betsyarceo/api-compiler-c-/input.txt";
 
         if (!File.Exists(filePath))
         {
@@ -47,6 +47,18 @@ class Program
             Console.WriteLine($"❌ Error de sintaxis: {ex.Message}");
         }
 
-        Console.WriteLine("\n=== 🔹 Fin de la compilación ===");
+        Console.WriteLine("\n=== 🔹 Análisis Semántico ===\n");
+        try
+        {
+            var semantic = new SemanticAnalyzer(tokenList);
+            semantic.Analyze();
+            Console.WriteLine("\n✔ Análisis semántico completado sin errores.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error semántico: {ex.Message}");
+        }
+
+     Console.WriteLine("\n=== 🔹 Fin de la compilación ===");
     }
 }
