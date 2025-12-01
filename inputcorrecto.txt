@@ -1,0 +1,32 @@
+// correcto
+
+service MiAPI {
+
+    route "/usuarios" {
+
+        GET {
+            let x = 5 + 10;
+            let mensaje = "Hola";
+            if (x > 5) {
+                return mensaje;
+            }
+        }
+
+        POST {
+            let nombre = "Pringle";
+            return nombre;
+        }
+    }
+
+    route "/auth" {
+
+        POST {
+            let usuario = "admin";
+            if (usuario == "admin") {
+                return "OK";
+            } else {
+                return error;
+            }
+        }
+    }
+}

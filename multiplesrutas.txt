@@ -1,0 +1,13 @@
+//multiples rutas
+
+service Multi {
+
+    route "/r1" {
+        GET { let x = 1; return x; }
+        POST { let y = "ok"; return y; }
+    }
+
+    route "/r2" {
+        DELETE { let z = 10; return z; }
+    }
+}

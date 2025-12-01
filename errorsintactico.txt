@@ -1,0 +1,12 @@
+// errorsintactico
+
+service BadService {
+
+    route "/x" 
+        GET {
+            let x = 10;
+            return x;
+        }
+    }
+
+}

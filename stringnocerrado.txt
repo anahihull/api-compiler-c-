@@ -1,0 +1,10 @@
+// stringnocerrado
+
+service BadString {
+    route "/s" {
+        GET {
+            let msg = "Hola Mundo;
+            return msg;
+        }
+    }
+}

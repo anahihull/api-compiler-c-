@@ -1,0 +1,10 @@
+// caracterinvalido
+
+service LexError {
+    route "/x" {
+        GET {
+            let a = 10 @ 2;
+            return a;
+        }
+    }
+}

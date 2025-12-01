@@ -1,0 +1,10 @@
+// malcomentario
+
+service Comment {
+    route "/c" {
+        GET {
+            // este comentario está bien
+            / este no está bien
+        }
+    }
+}

@@ -1,0 +1,11 @@
+// errorsemantico
+
+service Semantics {
+
+    route "/x" {
+        GET {
+            return x;
+        }
+    }
+
+}

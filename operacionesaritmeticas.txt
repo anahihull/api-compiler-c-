@@ -1,0 +1,18 @@
+// operaciones aritmeticas
+
+service TestOps {
+
+    route "/calc" {
+
+        GET {
+            let a = 10;
+            let b = 20.5;
+            let c = a + b;
+            let ok = (c > 20) && true;
+
+            if (ok) {
+                return "valido";
+            }
+        }
+    }
+}
