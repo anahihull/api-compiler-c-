@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "gSZVGYbYAec=",
+  "dgSpecHash": "3D/YlFqEQdA=",
   "success": true,
-  "projectFilePath": "/Users/betsyarceo/api-compiler-c-/Compilador.csproj",
+  "projectFilePath": "C:\\Users\\kajhu\\OneDrive\\Desktop\\api-compiler-c-\\Compilador.csproj",
   "expectedPackageFiles": [
-    "/Users/betsyarceo/.nuget/packages/microsoft.netcore.app.ref/8.0.22/microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
-    "/Users/betsyarceo/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
-    "/Users/betsyarceo/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.22/microsoft.netcore.app.host.osx-arm64.8.0.22.nupkg.sha512"
+    "C:\\Users\\kajhu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\kajhu\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\kajhu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\kajhu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
   ],
   "logs": []
 }

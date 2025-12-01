@@ -1,4 +1,3 @@
-// errorsemantico
 
 service Semantics {
 

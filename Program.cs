@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string filePath = args.Length > 0 ? args[0] : "/Users/betsyarceo/api-compiler-c-/input.txt";
+        string filePath = args.Length > 0 ? args[0] : "C:\\Users\\kajhu\\OneDrive\\Desktop\\api-compiler-c-\\operacionesaritmeticas.txt";
 
         if (!File.Exists(filePath))
         {

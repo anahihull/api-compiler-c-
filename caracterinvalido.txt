@@ -1,4 +1,4 @@
-// caracterinvalido
+
 
 service LexError {
     route "/x" {

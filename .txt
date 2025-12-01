@@ -1,4 +1,3 @@
-// malcomentario
 
 service Comment {
     route "/c" {

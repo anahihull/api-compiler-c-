@@ -1,5 +1,3 @@
-// operaciones aritmeticas
-
 service TestOps {
 
     route "/calc" {
